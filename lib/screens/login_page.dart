@@ -3,10 +3,14 @@ import 'package:flutter_demo_project/ui_helper/utils.dart';
 import 'package:toast/toast.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
-
   @override
   State<LoginPage> createState() => _LoginPageState();
+
+
+  final title;
+
+  LoginPage(this.title);
+
 }
 
 enum Gender { Male, Female }
@@ -22,6 +26,7 @@ class _LoginPageState extends State<LoginPage> {
   bool isSelected = false;
 
   Gender _gender = Gender.Male;
+
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 25,
                 ),
                 Text(
-                  "Login",
+                  widget.title,
                   style: titleTextStyle20(
                       textColor: Colors.black, fontWeight: FontWeight.bold),
                 ),
